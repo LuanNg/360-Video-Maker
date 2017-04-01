@@ -16,15 +16,13 @@ using System.Windows.Shapes;
 namespace _360_Video_Maker
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for EditorPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class EditorPage : Page
     {
-        public MainWindow()
+        public EditorPage()
         {
             InitializeComponent();
-            WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            MainFrame.Content = new EditorPage();
         }
     }
 }

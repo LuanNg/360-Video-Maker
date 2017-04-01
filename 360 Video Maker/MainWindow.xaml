@@ -5,8 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_360_Video_Maker"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="594.145" Width="1281.125">
     <Grid>
-        
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="File" Background="White" Width="27">
+                <MenuItem Header="Open Project"/>
+                <MenuItem Header="New Project"/>
+                <Separator />
+                <MenuItem Header="Save project"/>
+                <MenuItem Header="Close"/>
+            </MenuItem>
+
+            <MenuItem Header="Got to">
+                <MenuItem Header="Go to Renderer"/>
+                <MenuItem Header="Go to Editor"/>
+            </MenuItem>
+        </Menu>
+        <Frame Name="MainFrame">
+            
+        </Frame>
     </Grid>
 </Window>
