@@ -20,11 +20,27 @@ namespace _360_Video_Maker
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        private RenderPage RP = new RenderPage();
+        private EditorPage EP = new EditorPage();
+
         public MainWindow()
         {
             InitializeComponent();
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            MainFrame.Content = new EditorPage();
+            MainFrame.Content = EP;
         }
+
+        private void GoToRenderer_MenuItem(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Content = RP;
+        }
+
+        private void GoToEditor_MenuItem(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Content = EP;
+        }
+
+
     }
 }

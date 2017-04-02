@@ -17,11 +17,11 @@
             </MenuItem>
 
             <MenuItem Header="Got to">
-                <MenuItem Header="Go to Renderer"/>
-                <MenuItem Header="Go to Editor"/>
+                <MenuItem Header="Go to Renderer" Click="GoToRenderer_MenuItem"/>
+                <MenuItem Header="Go to Editor" Click="GoToEditor_MenuItem"/>
             </MenuItem>
         </Menu>
-        <Frame Name="MainFrame">
+        <Frame Name="MainFrame" NavigationUIVisibility="Hidden">
             
         </Frame>
     </Grid>

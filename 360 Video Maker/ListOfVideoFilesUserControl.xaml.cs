@@ -16,28 +16,19 @@ using System.Windows.Shapes;
 namespace _360_Video_Maker
 {
     /// <summary>
-    /// Interaction logic for EditorPage.xaml
+    /// Interaction logic for ListOfVideoFilesUserControl.xaml
     /// </summary>
-    public partial class EditorPage : Page
+    public partial class ListOfVideoFilesUserControl : UserControl
     {
-
-        UIFacade.UIFacade Facade = new UIFacade.UIFacade();
-
-        public EditorPage()
+        public ListOfVideoFilesUserControl()
         {
             InitializeComponent();
         }
 
-        private void OpenVideoFiles_Event(object sender, RoutedEventArgs e)
+        public void AddVideoFile(string path)
         {
-            List<string> paths = Facade.ImportVideoFiles();
-
-            foreach(string p in paths)
-            {
-                VideoFileUserControl vfuc = new VideoFileUserControl();
-                vfuc.SetPath(p);
-                Files.Children.Add(vfuc);
-            }
+            VideoFileUserControl vfuc = new VideoFileUserControl();
+            vfuc.SetPath(path);
         }
     }
 }

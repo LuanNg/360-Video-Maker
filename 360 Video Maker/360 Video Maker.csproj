@@ -55,10 +55,24 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ListOfVideoFilesUserControl.xaml.cs">
+      <DependentUpon>ListOfVideoFilesUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NumericUpDownControl.xaml.cs">
+      <DependentUpon>NumericUpDownControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RenderPage.xaml.cs">
       <DependentUpon>RenderPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UIFacade\UIFacade.cs" />
+    <Compile Include="VideoFileUserControl.xaml.cs">
+      <DependentUpon>VideoFileUserControl.xaml</DependentUpon>
+    </Compile>
     <Page Include="EditorPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ListOfVideoFilesUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -77,7 +91,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="NumericUpDownControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="RenderPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VideoFileUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -113,7 +135,9 @@
     <Folder Include="RenderingLogic\" />
     <Folder Include="ResourceLogic\" />
     <Folder Include="StateLogic\" />
-    <Folder Include="UIFacade\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\videoicon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
