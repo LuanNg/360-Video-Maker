@@ -35,8 +35,20 @@ namespace _360_Video_Maker
             foreach(string p in paths)
             {
                 VideoFileUserControl vfuc = new VideoFileUserControl();
+                vfuc.VideoClicked += Vfuc_VideoClicked;
                 vfuc.SetPath(p);
-                Files.Children.Add(vfuc);
+                VideoFilesList.Children.Add(vfuc);
+            }
+        }
+
+        private void Vfuc_VideoClicked(object e)
+        {
+            for (int i = 0; i < VideoFilesList.Children.Count; i++)
+            {
+                if (!VideoFilesList.Children[i].Equals(e))
+                {
+                    ((VideoFileUserControl)VideoFilesList.Children[i]).ResetBackground();
+                }
             }
         }
     }

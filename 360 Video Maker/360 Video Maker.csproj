@@ -55,9 +55,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="ListOfVideoFilesUserControl.xaml.cs">
-      <DependentUpon>ListOfVideoFilesUserControl.xaml</DependentUpon>
-    </Compile>
     <Compile Include="NumericUpDownControl.xaml.cs">
       <DependentUpon>NumericUpDownControl.xaml</DependentUpon>
     </Compile>
@@ -69,10 +66,6 @@
       <DependentUpon>VideoFileUserControl.xaml</DependentUpon>
     </Compile>
     <Page Include="EditorPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ListOfVideoFilesUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

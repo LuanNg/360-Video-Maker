@@ -23,7 +23,7 @@ namespace _360_Video_Maker
         public string FilePath { get; private set; }
         public string FileName { get; private set; }
 
-        public delegate string Onclick();
+        public delegate void Onclick(object e);
         public event Onclick VideoClicked;
 
 
@@ -35,13 +35,13 @@ namespace _360_Video_Maker
 
         public void ResetBackground()
         {
-            this.Background = new SolidColorBrush(Color.FromArgb(255, 0, 0, 0));
+            this.Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0));
         }
 
 
         private void UserControl_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            VideoClicked?.Invoke();
+            VideoClicked?.Invoke(this);
             this.Background = new SolidColorBrush(Color.FromRgb(25,25,100));
         }
 
