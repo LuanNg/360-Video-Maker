@@ -4,11 +4,13 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:_360_Video_Maker"
-             mc:Ignorable="d" Height="20" Width="131.5">
-    <Grid>
+             mc:Ignorable="d" Height="20" Width="160">
+    <Grid Margin="0">
         <Button x:Name="button" Content="^" HorizontalAlignment="Left" VerticalAlignment="Top" Width="18" Click="IncrementUp_Event" Margin="114,0,0,0"/>
         <Button x:Name="button1" Content="˅" HorizontalAlignment="Left" VerticalAlignment="Top" Width="18" Click="IncrementDown_Event"/>
         <TextBox x:Name="IncrementTextControl" HorizontalAlignment="Left" Height="20" Margin="18,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="96" Background="White" Foreground="Black" TextChanged="IncrementTextControl_TextChanged"/>
+        <Image x:Name="image" Visibility="Hidden" ToolTip="Invalid value" HorizontalAlignment="Left" Height="15" Margin="140,2,0,0" VerticalAlignment="Top" Width="17" Source="Resources/exclamation.png" Stretch="UniformToFill" Cursor="Hand"/>
+
 
     </Grid>
 </UserControl>

@@ -11,20 +11,31 @@
     <Grid>
         <Grid Name="VideoFilesPanel" Background="#FF404040" HorizontalAlignment="Left" Width="293" Margin="0,17,0,31">
             <Button x:Name="button" Content="Open Video files" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="102" Click="OpenVideoFiles_Event"/>
-            <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="0,35,0,0">
+            <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="0,35,0,0" KeyDown="ScrollViewer_KeyDown">
                 <StackPanel Name="VideoFilesList"/>
             </ScrollViewer>
         </Grid>
         <Grid Background="#FF579164" Height="31" VerticalAlignment="Bottom"/>
         <Grid Margin="0,17,0,31" Background="#FF722B2B" HorizontalAlignment="Right" Width="272">
-            <local:NumericUpDownControl HorizontalAlignment="Left" Height="19" Margin="91,41,0,0" VerticalAlignment="Top" Width="131"/>
-            <Label x:Name="label1" Content="Elevation" HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top" Width="64" Foreground="White"/>
-            <Label x:Name="label" Content="Video Coordinates" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="147" Foreground="White"/>
+            <GroupBox x:Name="groupBox" Header="Field of View" Height="95" Margin="1,183,0,0" Foreground="White" BorderBrush="White" VerticalAlignment="Top">
+                <Grid Margin="0,0,-2,-4">
+                    <Label x:Name="label_Copy2" Content="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Width="70" Foreground="White" Margin="10,7,0,0"/>
+                    <local:NumericUpDownControl x:Name="Hoz_Coordinate_Control" HorizontalAlignment="Left" Height="19" Margin="85,10,0,0" VerticalAlignment="Top" Width="166"/>
+                    <local:NumericUpDownControl x:Name="Vert_Coordinate_Control" HorizontalAlignment="Left" Height="19" Margin="85,44,0,0" VerticalAlignment="Top" Width="166"/>
+                    <Label x:Name="label_Copy3" Content="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" Width="70" Foreground="White" Margin="10,41,0,0"/>
+                </Grid>
+            </GroupBox>
+            <GroupBox x:Name="groupBox_Copy" Header="Coordinates" Height="138" Margin="1,10,1,0" Foreground="White" BorderBrush="White" VerticalAlignment="Top">
+                <Grid Margin="0,0,-2,-4">
+                    <local:NumericUpDownControl Name="U_Coordinate_Control" HorizontalAlignment="Left" Height="19" Margin="79,13,0,0" VerticalAlignment="Top" Width="166"/>
+                    <Label x:Name="label1" Content="U" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="64" Foreground="White"/>
 
-            <local:NumericUpDownControl HorizontalAlignment="Left" Height="19" Margin="91,72,0,0" VerticalAlignment="Top" Width="131"/>
-            <Label x:Name="label2" Content="Azimuth" HorizontalAlignment="Left" Margin="10,69,0,0" VerticalAlignment="Top" Width="64" Foreground="White"/>
-            <Label x:Name="label_Copy" Content="Rotation" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top" Width="64" Foreground="White"/>
-            <local:NumericUpDownControl HorizontalAlignment="Left" Height="19" Margin="91,103,0,0" VerticalAlignment="Top" Width="131"/>
+                    <local:NumericUpDownControl Name="V_Coordinate_Control" HorizontalAlignment="Left" Height="19" Margin="79,44,0,0" VerticalAlignment="Top" Width="166"/>
+                    <Label x:Name="label2" Content="V" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Width="64" Foreground="White"/>
+                    <Label x:Name="label_Copy" Content="Rotation" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top" Width="64" Foreground="White"/>
+                    <local:NumericUpDownControl Name="Rot_Coordinate_Control" HorizontalAlignment="Left" Height="19" Margin="79,75,0,0" VerticalAlignment="Top" Width="166"/>
+                </Grid>
+            </GroupBox>
 
         </Grid>
         <Grid Margin="293,17,272,31" Background="Black"/>

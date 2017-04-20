@@ -37,7 +37,7 @@ namespace _360_Video_Maker.ResourceLogic
 
         public void DeleteVideoFromList(int videoIndex)
         {
-
+            VideoPaths.RemoveAt(videoIndex);
         }
 
         public void AddVideoFiles(List<string> paths)

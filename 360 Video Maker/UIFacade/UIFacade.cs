@@ -1,4 +1,5 @@
-﻿using Microsoft.Win32;
+﻿using _360_Video_Maker.ResourceLogic;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,6 +11,8 @@ namespace _360_Video_Maker.UIFacade
 {
      public class UIFacade
     {
+        ResourceManager RM = ResourceManager.GetInstance();
+
         public List<string> ImportVideoFiles()
         {
             OpenFileDialog ofd = new OpenFileDialog();
@@ -22,9 +25,15 @@ namespace _360_Video_Maker.UIFacade
             if (ofd.ShowDialog() == true)
             {
                 Paths = ofd.FileNames.ToList();
+                RM.AddVideoFiles(Paths);
             }
 
             return Paths;
+        }
+
+        public void DeleteFileFromLibrary(int index)
+        {
+            RM.DeleteVideoFromList(index);
         }
 
         public void OpenProject()

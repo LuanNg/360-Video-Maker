@@ -26,6 +26,9 @@ namespace _360_Video_Maker
         public delegate void ValueChangedFunction(double value);
         public event ValueChangedFunction ValueChanged;
 
+        public double MaxValue { get; set; }
+        public double MinValue { get; set; }
+
         public NumericUpDownControl()
         {
             InitializeComponent();
@@ -51,14 +54,19 @@ namespace _360_Video_Maker
         {
             try
             {
-                CurrentValue = double.Parse(IncrementTextControl.Text);
-                IncrementTextControl.BorderThickness = new Thickness(0);
-                ValueChanged?.Invoke(CurrentValue);
+                image.Visibility = Visibility.Hidden;
+                if (IncrementTextControl.Text.Trim() != string.Empty)
+                {
+                    CurrentValue = double.Parse(IncrementTextControl.Text);
+                    ValueChanged?.Invoke(CurrentValue);
+
+                    IncrementTextControl.Text = IncrementTextControl.Text.Trim();
+                    IncrementTextControl.CaretIndex = IncrementTextControl.Text.Count();
+                }
             }
             catch
             {
-                IncrementTextControl.BorderBrush = new SolidColorBrush(Colors.Red);
-                IncrementTextControl.BorderThickness = new Thickness(1);
+                image.Visibility = Visibility.Visible;
             }
         }
     }
